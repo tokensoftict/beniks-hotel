@@ -31,7 +31,7 @@
                                     <td>{!! $warehouse_and_shop->status == 1 ? label("Active","success") : label("Inactive","danger") !!}</td>
                                     <td>{!! $warehouse_and_shop->default == 1 ? label("Default","success") : "" !!}</td>
                                     <td>
-                                        @if (userCanView('warehouse_and_shop.toggle'))
+                                        @if (userCanView('department111.toggle'))
                                             @if($warehouse_and_shop->status == 1)
                                                 <a href="{{ route('warehouse_and_shop.toggle',$warehouse_and_shop->id) }}" class="btn btn-danger btn-sm">Disable</a>
                                             @else
@@ -39,11 +39,11 @@
                                             @endif
                                         @endif
 
-                                        @if (userCanView('warehouse_and_shop.edit'))
+                                        @if (userCanView('department1111.edit'))
                                             <a href="{{ route('warehouse_and_shop.edit',$warehouse_and_shop->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                         @endif
 
-                                        @if (userCanView('warehouse_and_shop.set_as_default') && $warehouse_and_shop->default == "0" &&  $warehouse_and_shop->status == "1")
+                                        @if (userCanView('department.set_as_default') && $warehouse_and_shop->default == "0" &&  $warehouse_and_shop->status == "1")
                                             <a href="{{ route('warehouse_and_shop.set_as_default',$warehouse_and_shop->id) }}" class="btn btn-success btn-sm">Set Default</a>
                                         @endif
                                     </td>
