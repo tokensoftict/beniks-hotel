@@ -44,7 +44,7 @@
                                         @endif
 
                                         @if (userCanView('department.set_as_default') && $warehouse_and_shop->default == "0" &&  $warehouse_and_shop->status == "1")
-                                            <a href="{{ route('warehouse_and_shop.set_as_default',$warehouse_and_shop->id) }}" class="btn btn-success btn-sm">Set Default</a>
+                                            <a href="{{ route('department.set_as_default',$warehouse_and_shop->id) }}" class="btn btn-success btn-sm">Set Default</a>
                                         @endif
                                     </td>
                                 </tr>
