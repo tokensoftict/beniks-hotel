@@ -36,6 +36,7 @@ class AjaxController extends Controller
             $query->orWhere(getActiveStore()->yard_column,'>',0);
         })->whereHas('stock',function($q) use (&$query){
             $q->where('status',1);
+            $q->whereHas('stockDepartmentMapper');
             $q->where('type','!=','NON-SALEABLE-ITEMS');
             $q->where(function($sub) use (&$query){
                 foreach ($query as $char) {

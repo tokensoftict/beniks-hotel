@@ -167,6 +167,11 @@ class Stock extends Model
         return asset('assets/products.jpg');
     }
 
+    public function stockDepartmentMapper()
+    {
+        return $this->hasMany(StockDepartmentMapper::class, 'stock_id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
